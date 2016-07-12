@@ -1,0 +1,22 @@
+{
+    "name": "flare-icons",
+    "version": "0.0.0",
+    "description" : "An Icon pack that uses inline svg graphics.",
+    "license" : "MIT",
+    "keywords": [
+        "svg",
+        "flare media player"
+    ],
+    "author": {
+        "name" : "Brian Parra",
+        "email" : "develop@brianparra.com"
+    },
+    "main" : "src/flare-icons.js",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/FlareMediaPlayer/FlareIcons.git"
+    },
+    "dependencies": {
+        "flare-dom-elements" : "0.0.0"
+    }
+}
