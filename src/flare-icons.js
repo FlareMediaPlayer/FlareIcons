@@ -17,6 +17,7 @@ class FlareIcon extends FlareDomElementNs {
 }
 
 class FlarePlayIcon extends FlareIcon {
+    
     constructor() {
         super();
         this.renderAttributes({
@@ -35,6 +36,7 @@ class FlarePlayIcon extends FlareIcon {
         //this.indent = this.element.appendChild(document.createTextNode("\n"));
 
     }
+    
 }
 
 class FlarePauseIcon extends FlareIcon {
@@ -209,7 +211,19 @@ class FlareLoadingIcon extends FlareIcon{
 }
 
 
-module.exports.FlarePlayIcon = FlarePlayIcon;
-module.exports.FlarePauseIcon = FlarePauseIcon;
-module.exports.VolumeIcon = FlareVolumeIcon;
-module.exports.LoadingIcon = FlareLoadingIcon;
+if (process.env.MODE === "global") {
+    
+    window.Flare = window.Flare || {};
+    window.Flare.FlarePlayIcon = FlarePlayIcon;
+    window.Flare.FlarePauseIcon = FlarePauseIcon;
+    window.Flare.VolumeIcon = FlareVolumeIcon;
+    window.Flare.LoadingIcon = FlareLoadingIcon;
+
+} else {
+    
+    module.exports.FlarePlayIcon = FlarePlayIcon;
+    module.exports.FlarePauseIcon = FlarePauseIcon;
+    module.exports.VolumeIcon = FlareVolumeIcon;
+    module.exports.LoadingIcon = FlareLoadingIcon;
+
+}
