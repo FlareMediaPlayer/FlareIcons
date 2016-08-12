@@ -29,8 +29,5 @@
     },
     "scripts": {
         "build": "browserify src/flare-icons.js > build/flare-icons-0.0.0.min.js "
-    },
-    "config":{
-        "mode" : "global"
     }
 }
