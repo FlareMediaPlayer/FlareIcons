@@ -1,11 +1,10 @@
-build-private:
-	VERSION=`node -pe "require('./package.json').version"` && \
-	browserify src/flare-icons.js | \
-	babel --presets es2015 | \
-	uglifyjs - -o build/flare-icons-"$$VERSION".min.js
-	
-build-global:
+build-release:
+	rm -rf build 
+	mkdir build  
 	VERSION=`node -pe "require('./package.json').version"` && \
 	browserify src/flare-icons.js -t [ envify purge --MODE global ] | \
 	babel --presets es2015 | \
-	uglifyjs - -o build/flare-icons-"$$VERSION".g.min.js
+	uglifyjs - -o build/flare-icons-"$$VERSION".min.js
+	
+
+	

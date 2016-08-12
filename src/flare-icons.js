@@ -14,6 +14,25 @@ class FlareIcon extends FlareDomElementNs {
         this.renderAttributes({
         });
     }
+    
+    static Create(target){
+        
+        var domTarget;
+        if (target != undefined) {
+            if (typeof target === 'string') {
+                domTarget = document.getElementById(target);
+            } else if (typeof this.target === 'object' && this.target.nodeType === 1) {
+                domTarget = target;
+            }
+        } else {
+            domTarget = document.body;
+        }
+        
+        var icon = new this();
+        domTarget.appendChild(icon.element);
+        return icon;
+        
+    }
 }
 
 class FlarePlayIcon extends FlareIcon {
